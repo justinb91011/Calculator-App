@@ -1,88 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo App</title>
-  </head>
-  <body>
-    <body class="bg-stone-100">
-      <header class="max-w-lg py-4 mx-auto mt-5 font-thin text-center">
-        <h1 class="font-sans text-7xl text-rose-700">~ todos ~</h1>
-      </header>
 
-      <nav
-        id="todo-nav"
-        class="flex items-center justify-center gap-3 py-2 filters"
-        role="navigation"
-      >
-        <a
-          href="#/"
-          class="p-1 underline underline-offset-4 decoration-rose-800 decoration-2"
-          role="button"
-          >All</a
-        >
-        <a
-          href="#/active"
-          class="p-1 border-0 rounded-sm border-rose-700"
-          role="button"
-          >Active</a
-        >
-        <a
-          href="#/completed"
-          class="p-1 border-0 rounded-sm border-rose-700"
-          role="button"
-          >Completed</a
-        >
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-      <main class="max-w-lg mx-auto font-thin bg-white divide-y shadow-md">
-        <input
-          id="new-todo"
-          placeholder="What needs to be done?"
-          autofocus
-          class="w-full p-4 text-2xl italic outline-none focus:outline-offset-0 focus:outline-rose-700"
-        />
-        <section
-          id="todo-list"
-          class="flex flex-col w-full text-xl font-normal divide-y"
-        >
-          <div class="p-4 todo-item">
-            <div class="todo-text">Buy milk</div>
-            <input class="hidden todo-edit" value="Buy milk" />
-          </div>
-          <div class="p-4 todo-item">
-            <div class="todo-text">Buy bread</div>
-            <input class="hidden todo-edit" value="Buy bread" />
-          </div>
-        </section>
-        <section
-          id="todo-actions"
-          class="flex justify-between p-4 text-sm text-gray-600"
-        >
-          <span id="todo-count">2 items left</span>
-          <button
-            id="mark-all-completed"
-            aria-label="Mark all tasks as completed"
-          >
-            Mark all as complete
-          </button>
-          <button id="clear-completed" aria-label="Clear completed tasks">
-            Clear completed
-          </button>
-        </section>
-      </main>
+<body class="bg-gray-800 text-white flex items-center justify-center min-h-screen">
+    <div class="calculator bg-gray-900 p-12 rounded-lg shadow-lg">
+        <div id="display" class="display bg-gray-800 text-right p-6 rounded mb-8 text-4xl">0</div>
+        <div class="buttons grid grid-cols-4 gap-6">
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('7')">7</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('8')">8</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('9')">9</button>
+            <button class="btn bg-orange-500 p-6 rounded text-2xl" onclick="setOperation('/')">/</button>
 
-      <footer
-        class="flex flex-col items-center justify-center max-w-lg mx-auto mt-10 text-xs text-gray-500 font-extralight"
-      >
-        <div>Click to complete a todo</div>
-        <div>Double-click to edit a todo</div>
-      </footer>
-      <!-- Scripts here. Don't remove ↓ -->
-      <script type="module" src="/src/main.js"></script>
-    </body>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('4')">4</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('5')">5</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('6')">6</button>
+            <button class="btn bg-orange-500 p-6 rounded text-2xl" onclick="setOperation('*')">*</button>
+
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('1')">1</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('2')">2</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('3')">3</button>
+            <button class="btn bg-orange-500 p-6 rounded text-2xl" onclick="setOperation('-')">-</button>
+
+            <button class="btn bg-gray-700 col-span-2 p-6 rounded text-2xl" onclick="appendNumber('0')">0</button>
+            <button class="btn bg-gray-700 p-6 rounded text-2xl" onclick="appendNumber('.')">.</button>
+            <button class="btn bg-orange-500 p-6 rounded text-2xl" onclick="setOperation('+')">+</button>
+            
+            <button class="btn bg-red-500 col-span-2 p-6 rounded text-2xl" onclick="clearAll()">C</button>
+            <button class="btn bg-green-500 col-span-2 p-6 rounded text-2xl" onclick="calculate()">=</button>
+        </div>
+    </div>
+    
+    <script src="/src/script.js"></script>
+</body>
+
 </html>

@@ -1,3 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* Your custom styles go here */
+.btn:active {
+    transform: scale(0.95);
+}
