@@ -14,7 +14,7 @@ A user-friendly web application built to perform both basic and complex mathemat
 - Start the development server with pnpm run dev.
 - Open your browser and navigate to http://localhost:5173.
 - Start making all kinds of calculations.
-
+ 
 ## Usage
 The calculator is straightforward to use:
 1. Click on the numbers and operators to input your calculation.
