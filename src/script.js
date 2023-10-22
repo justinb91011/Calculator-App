@@ -2,10 +2,8 @@ let currentInput = "";
 let operator = "";
 let firstInput = "";
 
-console.log('Script loaded');  // To confirm that the script file is loaded
 
 function appendNumber(number) {
-    console.log('appendNumber called with:', number); // To trace function calls
     currentInput += number;
     document.getElementById('display').innerText = currentInput;
 }
